@@ -1,0 +1,23 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 100vh;
+}
+
+.countContainer{
+  font-size: 80px;
+  font-family: fantasy;
+}
+
+.buttons{
+  width: 100%;
+}

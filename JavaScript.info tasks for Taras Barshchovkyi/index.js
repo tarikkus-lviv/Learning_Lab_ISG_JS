@@ -277,25 +277,24 @@
 //   let count = 1;
 //   let i = 0;
 //   let j = 1;
-//
+
 //   if (n < 1){
 //     alert ('Number is negative!')
 //   } else {
-//
+
 //     while (count < n){
 //       let fibo = i + j;
-//       console.log('fibo =' + fibo)
+//       console.log('fibo = ' + fibo)
 //       i = j;
-//       console.log('i =' + i)
 //       j = fibo;
 //       count = count + 1;
 //     }
 //     return j;
 //   }
-//
+
 // }
-//
-// alert(fib(77));
+
+// alert(fib(10));
 
 
 // **************************************
