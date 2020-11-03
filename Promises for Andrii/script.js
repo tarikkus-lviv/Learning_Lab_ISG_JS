@@ -1,54 +1,58 @@
-// EXCERCISE 1-3
-let sum = 4;
+// Ex 1
+function makePromiseResolveWith3(){
 
-function makePromiseResolveWith3 () {
-    return new Promise((resolve, reject) => {
-        if (sum === 9){
-            resolve ('EX:1-3. Yes, you are right!')
-        } else {
-            reject('EX:1-3. No, you are not right!')
-        }
-    })
+return new Promise( resolve => { 
+    resolve(3);
+    });
+
 }
 
-makePromiseResolveWith3().then((output) => {
-    console.log(output)
-}).catch((error) => {
-    console.log(error)
-})
+// Ex 2
+function makePromiseRejectWithBoo(){
+    return new Promise( reject=> { 
+        reject("Boo");
+    });
+}
 
+// Ex 3
+function makePromiseWithConstructor(itShouldResolve){
 
-// EXCERCISE 4
-let value = true;
-console.log(value);
+    return new Promise((resolve, reject) => {
+        itShouldResolve ? resolve(true) : reject(false);
+    });    
 
+}
+
+// Ex 4
 function makeDelayPromise(value, delayInMs){
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) =>{
         setTimeout(() => {
-            resolve(value = false);
+            resolve(value);
         }, delayInMs);
-    })    
+    }) ;
+}
+ 
+
+
+// Part 2
+
+// Ex 1
+
+function waitForPromise(promise, action){
+promise.then(action)
 }
 
-makeDelayPromise(value, 2000).then((output) => {
-    console.log(output);
-})
-  
-
-
-// EXCERCISE 1 PART 2
-function waitForPromise(promice, action){
-    promice.then(action);
-}
-  
-
-// EXCERCISE 2 PART 2
+// Ex 2
 function consumePromise(promise, consumer, handler){
-    promice.then(response => {promice.handler(response)});
+    Promise.then(x => consumer(handler(x))).catch(x => consumer(handler(x)));
 }
+
 
 module.exports = {
+    makePromiseResolveWith3,
+    makePromiseRejectWithBoo,
+    makePromiseWithConstructor,
+    makeDelayPromise,
     waitForPromise,
     consumePromise,
 };
-  
