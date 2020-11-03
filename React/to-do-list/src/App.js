@@ -7,23 +7,26 @@ class App extends Component {
 
     this.state={
       newItem:'',
-      list:[]
+      list:[],
+      key:''
     }
   }
 
 
-  updateInput(key, value) {
+  updateInput(event) {
     this.setState({
-      [key]: value
+      key: event.target.value
     });
   }
 
-  addItem() {
+  addItem = () => {
     // add id
     const newItem = {
-      id: 1+ Math.random(),
-      value: this.state.newItem.slice()
+      id: Math.ceil(Math.random() * 100),
+      value: this.state.key
     };
+
+    console.log(newItem);
 
     const list = [...this.state.list];
 
@@ -40,7 +43,7 @@ deleteItem(id) {
 
   const updatedList = list.filter(item => item.id !== id);
 
-  this.setState({list: updatedList})
+  this.setState( {list: updatedList} )
 }
 
   render() {
@@ -52,11 +55,11 @@ deleteItem(id) {
           <input 
             type='text' 
             placeholder='Type your task here' 
-            value={this.state.newItem} 
-            onChange={e => this.updateInput('newItem', e.target.value)}>
+            value={this.state.key} 
+            onChange={(e) => this.updateInput(e)}>
           </input>
           <button 
-            onClick={() => this.addItem}>
+            onClick={this.addItem}>
               ADD
           </button>
           <br/>
