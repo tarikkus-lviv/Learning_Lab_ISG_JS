@@ -11,17 +11,17 @@ class App extends React.Component {
 
   add5 = () =>{
     this.setState({
-      counter: this.state.counter+=5,
+      counter: this.state.counter + 5,
     })
   }
   add7 = () =>{
     this.setState({
-      counter: this.state.counter+=7,
+      counter: this.state.counter + 7,
     })
   }
   add9 = () =>{
     this.setState({
-      counter: this.state.counter+=9,
+      counter: this.state.counter + 9,
     })
   }
   reset = () =>{
@@ -34,7 +34,6 @@ class App extends React.Component {
   render() {
     return (
       <div className='container'>
-        <div className='content'>
         <h1 className="counter">Counter: {this.state.counter}</h1>
           <div className='buttons'>
             <button className='adding' onClick={this.add5}>Plus 5</button>
@@ -43,7 +42,6 @@ class App extends React.Component {
             <button className='resetting' onClick={this.reset}>Reset</button>
           </div>
         </div>
-      </div>
     )
   }
 }
